@@ -1,0 +1,9 @@
+{
+  "email_credentials": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "satyam.test311@gmail.com",
+    "password": "hezn srnq ddnb mfur",
+    "recipients": "Satyamthapa211@gmail.com"
+  }
+}
