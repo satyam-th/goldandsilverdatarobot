@@ -2,14 +2,12 @@ from robocorp.tasks import task
 from RPA.Browser.Selenium import Selenium
 from RPA.Excel.Files import Files
 from RPA.Email.ImapSmtp import ImapSmtp
-from RPA.Robocorp.Vault import Vault
-from datetime import datetime
 import sqlite3
 import os
 import json
 
-
 browser = Selenium()
+
 
 @task
 def run_task():
@@ -22,7 +20,7 @@ def run_task():
     send_email_report(excel_file)
     print("\nAll tasks completed!")
 
-
+#collecting data
 def data_taker():
     browser.set_selenium_speed(0.0)
     browser.open_available_browser("https://www.fenegosida.org/")
@@ -113,7 +111,7 @@ def database(data):
     
     # 4. Commit and close
     conn.commit()
-    print(f"✓ Data saved successfully! Record ID: {cursor.lastrowid}")
+    print(f"Data saved successfully! Record ID: {cursor.lastrowid}")
     conn.close()
 
 
@@ -224,7 +222,7 @@ def create_excel_report():
     excel.save_workbook()
     excel.close_workbook()
     
-    print(f"✓ Excel report created: {filename}")
+    print(f"Excel report created: {filename}")
     return filename
 
 def send_email_report(excel_file):
